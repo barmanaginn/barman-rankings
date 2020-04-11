@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block entete %}{% trans "Ranking" %}{% endblock %}
+{% block navbar %}
+<ul>
+	<li><a href="#first">{% trans "Best buyers" %}</a></li>
+	<li><a href="#second">{% trans "Best drinkers" %}</a></li>
+	<li><a href="#third">{% trans "Ranking by product" %}</a></li>
+</ul>
+{% endblock %}
+{% block content %}
+<section id="first" class="main">
+	<div class="spotlight">
+		<div class="content">
+			<header class="major">
+				<h2>{% trans "Best buyers" %}</h2>
+			</header>
+			<div class="row">
+				<div class="8u 12u$(medium)">
+					<table>
+						<thead>
+							<tr>
+								<th>{% trans "Position" %}</th>
+								<th>{% trans "Username" %}</th>
+								<th>{% trans "Debit" %}</th>
+								<th>{% trans "Direct debit (not used for ranking)" %}</th>
+							</tr>
+						</thead>
+						<tbody>
+							{%for member in best_buyers %}
+							<tr>
+								<th>{{ forloop.counter }}</th>
+								<th><a href="{% url 'users:profile' member.pk %}">{{ member.username }}</a></th>
+								<th>{{ member.profile.debit }} €</th>
+								<th>{{ member.profile.direct_debit }} €</th>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="second" class="main">
+	<div class="spotlight">
+		<div class="content">
+			<header class="major">
+				<h2>{% trans "Best drinkers" %}</h2>
+			</header>
+			<div class="row">
+				<div class="8u 12u$(medium)">
+					<table>
+						<thead>
+							<tr>
+								<th>{% trans "Position" %}</th>
+								<th>{% trans "Username" %}</th>
+								<th>{% trans "Ingerated alcohol (kg)" %}</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for member in best_drinkers %}
+							<tr>
+								<th>{{ forloop.counter }}</th>
+								<th><a href="{% url 'users:profile' member.pk %}">{{ member.username }}</a></th>
+								<th>{{ member.profile.alcohol }}</th>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="third" class="main">
+	<div class="spotlight">
+		<div class="content">
+			<header class="major">
+				<h2>{% trans "Ranking by product" %}</h2>
+			</header>
+			<div class="row">
+				<div class="8u 12u$(medium)">
+					<form action="" method="POST">
+						{% csrf_token %}
+						{{form}}
+						<br><br>
+						<button type="submit" class="button">{% trans "Display" %}</button>
+					</form>
+					{% if product_ranking %}
+					<table>
+						<thead>
+							<tr>
+								<th>{% trans "Position" %}</th>
+								<th>{% trans "Username"}</th>
+								<th>{% trans "Consumed quantities" %}</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for member in product_ranking %}
+							<tr>
+								<th>{{ forloop.counter }}</th>
+								<th><a href="{% url 'users:profile' member.0.pk %}">{{ member.0.username }}</a></th>
+								<th>{{ member.1 }}</th>
+							</tr>
+							{%endfor%}
+						</tbody>
+					</table>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+{% block extra_script %}
+{{form.media}}
+{% endblock %}

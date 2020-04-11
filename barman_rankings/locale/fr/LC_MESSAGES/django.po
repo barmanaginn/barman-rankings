@@ -1,0 +1,96 @@
+# barman-rankings - plugin for barman
+# Copyright © 2019-2020 Yoann Pietri <me@nanoy.fr>
+#
+# barman-rankings is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# barman-rankings is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with barman-rankings.  If not, see <https://www.gnu.org/licenses/>.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: barman-rankings 0.1\n"
+"Report-Msgid-Bugs-To: <barman@nanoy.fr>\n"
+"POT-Creation-Date: 2020-04-11 12:03+0200\n"
+"PO-Revision-Date: 2020-04-11 22:36+0200\n"
+"Last-Translator: Yoann Pietri <me@nanoy.fr>\n"
+"Language-Team: \n"
+"Language: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: __init__.py:13
+msgid "Add rankings to BarMan"
+msgstr "Ajout de classement à BarMan"
+
+#: __init__.py:20 templates/barman_rankings/ranking.html:4
+msgid "Ranking"
+msgstr "Classement"
+
+#: __init__.py:33
+msgid "Number of places to display in the ranking"
+msgstr "Nombre de places ¹a afficher dans le classement"
+
+#: __init__.py:39
+msgid "Rank"
+msgstr "Place au classement"
+
+#: __init__.py:41
+msgid "Ingerated alcohol"
+msgstr "Alcool ingéré"
+
+#: templates/barman_rankings/ranking.html:7
+#: templates/barman_rankings/ranking.html:17
+msgid "Best buyers"
+msgstr "Meilleurs consommateurs (débit)"
+
+#: templates/barman_rankings/ranking.html:8
+#: templates/barman_rankings/ranking.html:50
+msgid "Best drinkers"
+msgstr "Meilleurs consommateurs (alcool)"
+
+#: templates/barman_rankings/ranking.html:9
+#: templates/barman_rankings/ranking.html:81
+msgid "Ranking by product"
+msgstr "Classement par produit"
+
+#: templates/barman_rankings/ranking.html:24
+#: templates/barman_rankings/ranking.html:57
+#: templates/barman_rankings/ranking.html:95
+msgid "Position"
+msgstr "Place"
+
+#: templates/barman_rankings/ranking.html:25
+#: templates/barman_rankings/ranking.html:58
+msgid "Username"
+msgstr "Pseudo"
+
+#: templates/barman_rankings/ranking.html:26
+msgid "Debit"
+msgstr "Débit"
+
+#: templates/barman_rankings/ranking.html:27
+msgid "Direct debit (not used for ranking)"
+msgstr "Débit direct (non utilisé pour le classement)"
+
+#: templates/barman_rankings/ranking.html:59
+msgid "Ingerated alcohol (kg)"
+msgstr "Alcool ingéré (kg)"
+
+#: templates/barman_rankings/ranking.html:89
+msgid "Display"
+msgstr "Afficher"
+
+#: templates/barman_rankings/ranking.html:97
+msgid "Consumed quantities"
+msgstr "Quantités consommées"
