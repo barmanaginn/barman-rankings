@@ -34,7 +34,7 @@ class PluginApp(BarmanPlugin):
         nav_urls = (
             {
                 "text": _("Ranking"),
-                "icon": "list-ol",
+                "icon": "fas fa-list-ol",
                 "link": reverse_lazy("plugins:barman_rankings:ranking"),
                 "permission": None,
                 "login_required": True,
